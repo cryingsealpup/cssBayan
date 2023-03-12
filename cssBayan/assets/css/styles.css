@@ -18,6 +18,7 @@ h1 {
     display: flex;
     align-items: center;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .accordion__summary {
@@ -27,7 +28,8 @@ h1 {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    justify-content: space-between;
+    list-style: none;
 }
 
 .accordion__item {
@@ -45,15 +47,12 @@ h1 {
     gap: 1rem;
 }
 
+
 .accordion__summary-marker {
     width: 2rem;
     height: 2rem;
 }
 
-summary {
-    cursor: pointer;
-    list-style: none;
-}
 
 details[open] summary~* {
     animation: toggle 0.5s ease-in-out;
@@ -89,9 +88,14 @@ details[open] svg {
 }
 
 @media (hover: hover) {
-    .accordion:hover :not(details[open]) summary~* {
-      color: white;
-    }
+    .accordion:hover details summary {
+        color: white;
+      }
+
+      .accordion:hover details[open] summary {
+        color: black;
+      }
+
 }
 
 @media (max-width: 31em) {
