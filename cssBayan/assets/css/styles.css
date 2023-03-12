@@ -1,0 +1,90 @@
+body {
+    margin: 0 auto;
+    font-family: 'Merriweather', serif;
+    padding: 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 100;
+}
+
+.accordion {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.accordion__summary {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.accordion__item {
+    width: 30rem;
+    background: #20C1BD;
+    padding: 1rem;
+
+}
+
+.accordion__content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.accordion__summary-marker {
+    width: 2rem;
+    height: 2rem;
+}
+
+summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+details[open] summary~* {
+    animation: toggle 0.5s ease-in-out;
+}
+
+.accordion__meme {
+    width: 13rem;
+}
+
+@keyframes toggle {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+details svg {
+    transition: all 0.3s ease;
+}
+
+details[open] svg {
+    transform: rotate(-45deg);
+}
+
+@media (hover: hover) {
+    .accordion:hover :not(details[open]) summary~* {
+      color: white;
+    }
+}
